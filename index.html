@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kemenkumham Jawa Barat</title>
+  	<link href="https://kemenkumhamjabar.org/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #002b5c;    /* biru tua Kemenkumham (silakan sesuaikan) */
+      --accent: #f4b400;     /* kuning emas aksen */
+      --light:  #f5f7fa;
+      --dark:   #222;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 48px;
+      height: 48px;
+      background: #fff;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-size: 26px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    /* Ganti img src dengan logo resmi Kemenkumham Jawa Barat */
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .site-title {
+      line-height: 1.2;
+    }
+    .site-title h1 {
+      font-size: 18px;
+      margin-bottom: 2px;
+    }
+    .site-title span {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 40px 5% 30px;
+      background: linear-gradient(135deg, var(--primary), #004b8f);
+      color: #fff;
+    }
+    .hero-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero-text {
+      flex: 1 1 260px;
+    }
+    .hero-text h2 {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+    .hero-text p {
+      font-size: 14px;
+      margin-bottom: 18px;
+      max-width: 480px;
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+    }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+    .hero-cards {
+      flex: 1 1 220px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+    .hero-card {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      padding: 12px;
+      font-size: 13px;
+    }
+    .hero-card i {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    .hero-card h3 {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    /* LAYANAN UTAMA */
+    .section {
+      padding: 32px 5%;
+    }
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .section p.subtitle {
+      font-size: 13px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    .service-grid {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .service-box {
+      background: #fff;
+      border-radius: 6px;
+      padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      font-size: 13px;
+    }
+    .service-box i {
+      font-size: 22px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .service-box h3 {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .service-box a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--primary);
+    }
+
+    /* BERITA SINGKAT */
+    .news-list {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .news-item {
+      background: #fff;
+      border-radius: 6px;
+      padding: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      font-size: 13px;
+    }
+    .news-item span.date {
+      font-size: 11px;
+      color: #777;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .news-item h3 {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .news-item a {
+      font-size: 12px;
+      color: var(--primary);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #00152f;
+      color: #fff;
+      padding: 18px 5%;
+      font-size: 12px;
+    }
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+    .footer-contact p {
+      margin-bottom: 4px;
+    }
+    .footer-social a {
+      margin-left: 10px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    @media (max-width: 640px) {
+      nav ul {
+        display: none; /* sederhana: sembunyikan menu di mobile, bisa diganti hamburger */
+      }
+      header {
+        padding-inline: 4%;
+      }
+      .hero {
+        padding-inline: 4%;
+      }
+      .section {
+        padding-inline: 4%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-wrap">
+      <div class="logo">
+        <p><img src="https://kemenkumhamjabar.org/images/logo/Kementerian-Hukum-Dan-Ham-Kemenkumham-Logo-Vector.png" alt="Kementerian Hukum Dan Ham Kemenkumham Logo Vector" width="35" height="39"/>
+      </div>
+      <div class="site-title">
+        <h1>Kemenkumham Jawa Barat</h1>
+        <span>Kantor Wilayah Kementerian Hukum dan Hak Asasi Manusia Jawa Barat</span>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Profil</a></li>
+        <li><a href="#">Layanan</a></li>
+        <li><a href="#">Berita</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h2>Pelayanan Hukum dan HAM yang Profesional, Akuntabel, dan Transparan</h2>
+        <p>
+          Portal resmi Kantor Wilayah Kementerian Hukum dan Hak Asasi Manusia Jawa Barat
+          sebagai gerbang informasi dan layanan publik berbasis digital.
+        </p>
+        <div class="hero-cta">
+          <button class="btn btn-primary">
+            <i class="fa-solid fa-globe"></i>
+            <li><a href="#">Layanan Online</a></li>
+          </button>
+          <button class="btn btn-outline">
+            <i class="fa-solid fa-file-lines"></i>
+            <li><a href="#">Informasi Publik</a></li> 
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-cards">
+        <div class="hero-card">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <h3>Layanan Administrasi Hukum Umum</h3>
+          <p>Pendaftaran perseroan, yayasan, dan badan hukum lainnya secara terpadu.</p>
+        </div>
+        <div class="hero-card">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Layanan Hak Asasi Manusia</h3>
+          <p>Penguatan pemajuan dan penegakan HAM di Provinsi Jawa Barat.</p>
+        </div>
+        <div class="hero-card">
+          <i class="fa-solid fa-copyright"></i>
+          <h3>Layanan Kekayaan Intelektual</h3>
+          <p>Permohonan merek, paten, hak cipta, dan layanan KI lainnya.</p>
+        </div>
+        <div class="hero-card">
+          <i class="fa-solid fa-building-columns"></i>
+          <h3>Jaringan Dokumentasi & Informasi Hukum</h3>
+          <p>Akses regulasi dan produk hukum pusat maupun daerah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYANAN UTAMA -->
+  <section class="section">
+    <h2>Layanan Utama</h2>
+    <p class="subtitle">Akses cepat ke layanan prioritas Kemenkumham Jawa Barat.</p>
+
+    <div class="service-grid">
+      <div class="service-box">
+        <i class="fa-solid fa-id-card"></i>
+        <h3>Layanan Terpadu Satu Pintu</h3>
+        <p>Informasi dan pengajuan layanan secara terintegrasi melalui LTSP.</p>
+        <a href="#">
+          Selengkapnya
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="service-box">
+        <i class="fa-solid fa-book"></i>
+        <h3>JDIH Kemenkumham Jabar</h3>
+        <p>Akses dokumen hukum, peraturan perundang-undangan, dan produk hukum daerah.</p>
+        <a href="#">
+          Buka JDIH
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="service-box">
+        <i class="fa-solid fa-copyright"></i>
+        <h3>Layanan Kekayaan Intelektual</h3>
+        <p>Konsultasi dan permohonan pencatatan atau pendaftaran KI.</p>
+        <a href="#">
+          Ajukan Sekarang
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="service-box">
+        <i class="fa-solid fa-users"></i>
+        <h3>Pengaduan & Layanan HAM</h3>
+        <p>Saluran pengaduan dan pelayanan terkait dugaan pelanggaran HAM.</p>
+        <a href="#">
+          Sampaikan Aduan
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BERITA TERKINI -->
+  <section class="section" style="padding-top: 0;">
+    <h2>Berita Terkini</h2>
+    <p class="subtitle">Informasi terbaru kegiatan dan program Kemenkumham Jawa Barat.</p>
+
+    <div class="news-list">
+      <div class="news-item">
+        <span class="date">12 Maret 2026</span>
+        <h3>Kemenkumham Jabar Gelar Sosialisasi Layanan Digital ke Pemerintah Daerah</h3>
+        <p>Kegiatan sosialisasi dilaksanakan untuk memperkuat sinergi pembentukan produk hukum daerah yang berkualitas.</p>
+        <a href="#">Baca selengkapnya</a>
+      </div>
+      <div class="news-item">
+        <span class="date">8 Maret 2026</span>
+        <h3>Peningkatan Pelayanan Kekayaan Intelektual bagi Pelaku UMKM</h3>
+        <p>Kantor Wilayah memfasilitasi pendampingan pendaftaran merek dagang bagi pelaku usaha di Jawa Barat.</p>
+        <a href="#">Baca selengkapnya</a>
+      </div>
+      <div class="news-item">
+        <span class="date">3 Maret 2026</span>
+        <h3>Penguatan Jejaring Dokumentasi dan Informasi Hukum di Wilayah</h3>
+        <p>JDIH menjadi pintu utama akses regulasi yang terbuka bagi masyarakat dan pemda.</p>
+        <a href="#">Baca selengkapnya</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-contact">
+        <p><strong>Kantor Wilayah Kemenkumham Jawa Barat</strong></p>
+        <p>Alamat:  	Jl. Jakarta No.27, Kebonwaru, Kec. Batununggal, Kota Bandung, Jawa Barat 40272</p>
+        <p>Telepon: 021 - 5253004 | Email: rohumas@kemenkumham.com</p>
+      </div>
+      <div class="footer-social">
+        <span>Ikuti kami:</span>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
